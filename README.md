@@ -9,7 +9,9 @@ use vscode to code for rp2040 pi pico connect with st7789 2.8 , supported LVGL t
 
 1.  **Prerequisites:**
     *   vscode
-![image](https://github.com/user-attachments/assets/f107d452-1839-4e5e-b623-cc506b882c58)   
+      
+![image](https://github.com/user-attachments/assets/f107d452-1839-4e5e-b623-cc506b882c58)
+
     *   Raspberry Pi Pico Visual Studio Code extension
 
 2.  **Clone the repository:**
@@ -22,9 +24,13 @@ use vscode to code for rp2040 pi pico connect with st7789 2.8 , supported LVGL t
 
     
     Click Rasberry Pi
+    
     ![image](https://github.com/user-attachments/assets/1df66fe9-5f8b-40c9-a96f-775ba534d5f6)
+    
     Create new project, done it. then it will require download GCC toolchain and pico-sdk
+    
     ![image](https://github.com/user-attachments/assets/28ef5f70-0a90-4e76-b62c-d51f9c40a557)
+    
     Wait auto downloading and install GCC toolchain and pico-SDK.
     
 ## Usage
@@ -37,6 +43,7 @@ To run the project:
 
     copy lvgl, src, inc , lv_conf.h in project, if use st7789 2.8
     else using AI STUDIO Google to guide create drivers (ili9341 .etc...) for it. ( can use OTHER AI but not effect)
+    
 3.  **Research**
    
     research https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2212igXiULXN-gZ8URQ2F0RWzwiHA5sUaya%22%5D,%22action%22:%22open%22,%22userId%22:%22104288789476001819042%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
