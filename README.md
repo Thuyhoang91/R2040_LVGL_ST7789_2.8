@@ -12,7 +12,7 @@ Copy src,inc in DMA , instead of old files
 
 2.   To CmakeLists
 
-      Require add files in src in add_execute of CmakeLists
+      Require add files in src to add_execute of CmakeLists
 
      ![image](https://github.com/user-attachments/assets/0510f579-179d-40a4-aab5-c34f161f315f)
 
