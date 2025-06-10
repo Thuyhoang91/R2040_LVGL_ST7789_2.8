@@ -36,11 +36,11 @@ Or require AI create UIs .
 
 # Require Ai generating code
 
-1.   To simple code
+1.   *To simple code*
       Open copilot  then chat "only lvgl create app guis" , copy code then modify few code to complete
-2.   To advanced code
+2.   *To advanced code*
       Open AI STUDIO GOOGLE or other AI that you beleave.
       chat "only lvgl create app guis".
 
-3.   chat "guide link to main or project"
+3.   *chat "guide link to main or project"*
       if you clean things,only create file.h then include in main call functions to run.
