@@ -37,10 +37,24 @@ Or require AI create UIs .
 # Require Ai generating code
 
 1.   **To simple code**
+
+     https://m365.cloud.microsoft/chat/?fromcode=edgentp&redirectid=8e8a6704ce4542ecac8eead7584833b7&auth=2&internalredirect=CCM&login_hint=truongthanh%40minhanhthu.edu.vn
+
+     ![image](https://github.com/user-attachments/assets/7c586c20-8094-489a-8fb4-10973393abbc)
+
+   
       Open copilot  then chat "only lvgl create app guis" , copy code then modify few code to complete
+     
 2.   **To advanced code**
+
+     research https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221UTOqJ_T2ycxENLGAP6FTSPYVNYVojrpt%22%5D,%22action%22:%22open%22,%22userId%22:%22104288789476001819042%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
+
+     ![image](https://github.com/user-attachments/assets/f44b678d-0263-415c-b98d-e5f56a174ecc)
+
+   
       Open AI STUDIO GOOGLE or other AI that you beleave.
       chat "only lvgl create app guis".
 
 3.   **chat "guide link to main or project"**
+   
       if you clean things,only create file.h then include in main call functions to run.
