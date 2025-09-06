@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2025-06-21T11:51:29Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "stm32cnc"
+        },
+        "Owner": "Trn S Trng Thanh <transytruongthanh@gmail.com>",
+        "Size": {
+            "X": 47.95,
+            "Y": 73.15
+        }
+    }
+}

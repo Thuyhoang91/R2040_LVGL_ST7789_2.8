@@ -1,0 +1,9 @@
+Partlist exported from C:/Users/truongthanh/Documents/EAGLE/projects/STM32GRBL/stm32cnc.sch at 8/4/2025 10:59 PM
+
+Qty Value      Device         Package   Parts      Description                                                                                                     MF MPN OC_FARNELL OC_NEWARK POPULARITY PROD_ID    SF_ID     SPICEPREFIX
+1              BLUE_PILL      BLUE_PILL U$1                                                                                                                                                                                               
+1              CONN_02POLAR   MOLEX-1X2 J10        Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections                                                   PRT-09918            
+3              CONN_04POLAR   MOLEX-1X4 J2, J3, J4 Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections                                        CONN-08186 PRT-08231            
+2              CPOL-EUE2,5-6E E2,5-6E   C1, C2     POLARIZED CAPACITOR, European symbol                                                                                                        27                              C          
+1              MT6-3          MT6-3     SV1        AMP MT6 CONNECTOR                                                                                                      unknown    unknown                                              
+2   1182-A4988 1182-A4988     A4988     IC1, IC2   A4988 Stepper Motor Driver Carrier                                                                                                                                                     
