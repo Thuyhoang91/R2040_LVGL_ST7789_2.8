@@ -1,9 +1,0 @@
-Partlist exported from C:/Users/truongthanh/Documents/EAGLE/projects/Ring-Encoder/untitled.sch at 8/24/2025 8:49 AM
-
-Qty Value          Device         Package           Parts     Description                                                                                                     POPULARITY PROD_ID    SPICEPREFIX
-1                  CONN_04LOCK    1X04_LOCK         J1        Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections            CONN-09696            
-3                  R-EU_M0805     M0805             A, B, BTN RESISTOR, European symbol                                                                                       45                    R          
-1   3X6X4.3-BUTTON 3X6X4.3-BUTTON BTN-3X6X4.3       U$4                                                                                                                                                        
-1   PICO           PICO           PICO_TH           U$1                                                                                                                                                        
-1   RING_ENCODER   RING_ENCODER   EC25-RING-ENCODER U$2                                                                                                                                                        
-1   ST7789         ST7789         TFT-2.8-SD        U$3                                                                                                                                                        
