@@ -18,7 +18,7 @@ static void dma_irq_handler() {
     }
 }
 
-void dma_init() {
+static void dma_init() {
     dma_chan = dma_claim_unused_channel(true);
     irq_set_exclusive_handler(DMA_IRQ_0, dma_irq_handler);
     irq_set_enabled(DMA_IRQ_0, true);
@@ -26,6 +26,7 @@ void dma_init() {
 }
 
 void st7789_init() {
+    dma_init();
     gpio_init(PIN_CS);
     gpio_set_dir(PIN_CS, GPIO_OUT);
     gpio_put(PIN_CS, 1);

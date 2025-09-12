@@ -52,7 +52,7 @@ static void encoder_callback(uint gpio, uint32_t events) {
     }
 }
 
-void encoder_read(lv_indev_t *indev_drv, lv_indev_data_t *data) {
+ void encoder_read(lv_indev_t *indev_drv, lv_indev_data_t *data) {
     data->enc_diff = encoder_count;
     if(encoder_count>0) {
         data->key = LV_KEY_RIGHT;
@@ -73,7 +73,7 @@ void encoder_read(lv_indev_t *indev_drv, lv_indev_data_t *data) {
     button_pressed = false;
 }
 
-void encoder_init() {
+static void encoder_init() {
     gpio_init(ENC_A);
     gpio_set_dir(ENC_A, GPIO_IN);
     gpio_pull_up(ENC_A);
@@ -92,11 +92,22 @@ void encoder_init() {
     gpio_set_irq_enabled(ENC_B, GPIO_IRQ_EDGE_FALL, true);
     gpio_set_irq_enabled(ENC_SW, GPIO_IRQ_EDGE_FALL, true);
 }
+static bool timer_callback(struct repeating_timer *t) {
+    lv_tick_inc(5); // Increment LVGL tick by 5ms
+    return true;    // Continue repeating
+}
+
+static void time_init() {
+    static struct repeating_timer timer;
+    add_repeating_timer_us(5000, timer_callback, NULL, &timer); // 5ms interval
+}
 
 
 void lv_port_init() {
     // --- LVGL Init ---
     lv_init();
+    time_init();
+    encoder_init();
 
     // 1. Initialize `lv_disp_drv_t` for the display driver
     //lv_disp_t *disp_drv;
@@ -122,13 +133,4 @@ void lv_port_init() {
     lv_indev_set_group(encoder_indev, group);
 }
 
-bool timer_callback(struct repeating_timer *t) {
-    lv_tick_inc(5); // Increment LVGL tick by 5ms
-    return true;    // Continue repeating
-}
-
-void time_init() {
-    static struct repeating_timer timer;
-    add_repeating_timer_us(5, timer_callback, NULL, &timer); // 5ms interval
-}
 

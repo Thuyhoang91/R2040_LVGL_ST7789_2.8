@@ -15,6 +15,6 @@
 
 void st7789_init();
 void st7789_flush_dma(lv_disp_t *disp, const lv_area_t *area, uint8_t *color_p);
-void dma_init();
+//void dma_init();
 
 #endif // ST7789_H
