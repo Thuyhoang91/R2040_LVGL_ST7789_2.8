@@ -8,12 +8,9 @@
 int main()
 {
     stdio_init_all();
-    st7789_init();
-    encoder_init();
-    dma_init();
-    time_init();
+    st7789_init();    
     lv_port_init(); 
-    setup_ui();
+    //setup_ui();
 
     while (true) {
         lv_task_handler(); // Handle LVGL tasks
@@ -21,3 +18,4 @@ int main()
     }
     return 0;
 }
+
