@@ -49,9 +49,13 @@ void lv_textarea(void)
     create_styled_textarea_cursor("This is a simple red cursor", 10,  &style_simple);
     create_styled_textarea_cursor("This is an underline blue cursor", 110, &style_underline);
     create_styled_textarea_cursor("This is a complex block cursor", 60, &style_block);
+
+    
+    // Add the textareas to the group (the order will be their focus order)
     lv_group_add_obj(group, lv_obj_get_child(lv_screen_active(), 0));
     lv_group_add_obj(group, lv_obj_get_child(lv_screen_active(), 1));   
     lv_group_add_obj(group, lv_obj_get_child(lv_screen_active(), 2));
 }
+
 
 //#endif
