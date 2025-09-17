@@ -24,48 +24,65 @@ if (EXISTS ${picoVscode})
 endif()
 # ====================================================================================
 set(PICO_BOARD pico CACHE STRING "Board type")
+set(PICO_FLASH_SIZE_BYTES "16 * 1024 * 1024")
+
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(LVGL9.3_BASICS C CXX ASM)
+project(FatFS_second C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-# Add subderectoruies
-add_subdirectory(lvgl)
+
+#add lvgl from userhome
+add_subdirectory(${USERHOME}/lvgl lvgl)
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(LVGL9.3_BASICS 
-LVGL9.3_BASICS.c 
+add_executable(FatFS_second 
+FatFS_second.c
 dev/lv_port.c
 dev/st7789.c
-Example/ex1.c
+fatfs/ff.c
+fatfs/diskio.c
+#fatfs/ffsystem.c
+fatfs/ffunicode.c
+#fatfs/usb_descriptors.c
+msc/usb_descriptors.c
+msc/Tiny_usb_msc_callback.c
 )
 
-pico_set_program_name(LVGL9.3_BASICS "LVGL9.3_BASICS")
-pico_set_program_version(LVGL9.3_BASICS "0.1")
+pico_set_program_name(FatFS_second "FatFS_second")
+pico_set_program_version(FatFS_second "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(LVGL9.3_BASICS 0)
-pico_enable_stdio_usb(LVGL9.3_BASICS 1)
+pico_enable_stdio_uart(FatFS_second 0)
+pico_enable_stdio_usb(FatFS_second 0)
 
 # Add the standard library to the build
-target_link_libraries(LVGL9.3_BASICS
+target_link_libraries(FatFS_second
         pico_stdlib
         hardware_spi
         hardware_dma
+        hardware_flash
+        #hardware_uart
+        tinyusb_device
+        tinyusb_board
+        #dev_library
         lvgl
+        lvgl::demos
+        lvgl::examples
         )
 
 # Add the standard include files to the build
-target_include_directories(LVGL9.3_BASICS PRIVATE
-        ${CMAKE_CURRENT_LIST_DIR}
-        ${CMAKE_CURRENT_LIST_DIR}/dev
-        ${CMAKE_CURRENT_LIST_DIR}/Example
+target_include_directories(FatFS_second PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}  
+        ${CMAKE_CURRENT_LIST_DIR}/dev  
+        ${CMAKE_CURRENT_LIST_DIR}/fatfs  
+        ${CMAKE_CURRENT_LIST_DIR}/msc  
 )
 
-pico_add_extra_outputs(LVGL9.3_BASICS)
+pico_add_extra_outputs(FatFS_second)
 
