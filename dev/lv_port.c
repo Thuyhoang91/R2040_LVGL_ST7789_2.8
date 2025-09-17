@@ -52,7 +52,7 @@ static void encoder_callback(uint gpio, uint32_t events) {
     }
 }
 
- void encoder_read(lv_indev_t *indev_drv, lv_indev_data_t *data) {
+ static void encoder_read(lv_indev_t *indev_drv, lv_indev_data_t *data) {
     data->enc_diff = encoder_count;
     if(encoder_count>0) {
         data->key = LV_KEY_RIGHT;
@@ -110,27 +110,27 @@ void lv_port_init() {
     encoder_init();
 
     // 1. Initialize `lv_disp_drv_t` for the display driver
-    //lv_disp_t *disp_drv;
+
     lv_disp_t *disp_drv = lv_display_create(ST7789_WIDTH, ST7789_HEIGHT);
     lv_display_set_flush_cb(disp_drv, st7789_flush_dma);
+
+
     // 2. Initialize `lv_disp_draw_buf_t` for the display buffer
+
     lv_display_set_buffers(disp_drv, buf1, buf2, sizeof(buf1), LV_DISPLAY_RENDER_MODE_PARTIAL);
+
 
     // 3. Initialize `lv_indev_drv_t` for the input device (encoder)
     
     encoder_indev = lv_indev_create();
     lv_indev_set_type(encoder_indev, LV_INDEV_TYPE_ENCODER);
     lv_indev_set_read_cb(encoder_indev, encoder_read);
-    //encoder_indev = indev_drv;
 
-    // static lv_indev_t indev_drv;
-    // lv_indev_drv_init(&indev_drv);
-    // indev_drv.type = LV_INDEV_TYPE_ENCODER;
-    // indev_drv.read_cb = encoder_read;
-    // encoder_indev = lv_indev_drv_register(&indev_drv);
+
+    // 4. Create a group and assign the input device to it
 
     group = lv_group_create();
     lv_indev_set_group(encoder_indev, group);
-}
+  }
 
 
