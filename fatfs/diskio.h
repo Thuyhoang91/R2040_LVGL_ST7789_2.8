@@ -9,6 +9,11 @@
 extern "C" {
 #endif
 
+#define FLASH_TARGET_OFFSET (1024 * 1024)
+//#define FLASH_SECTOR_SIZE 4096
+#define FLASH_TOTAL_SIZE (16 * 1024 * 1024)
+#define FS_SIZE (FLASH_TOTAL_SIZE - FLASH_TARGET_OFFSET)
+
 /* Status of Disk Functions */
 typedef BYTE	DSTATUS;
 
